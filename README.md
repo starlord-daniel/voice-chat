@@ -5,6 +5,32 @@
 This project is a voice chat application that uses Text to Speech (TTS), Speech to Text (STT) and Language Models (LMs) to enable voice communication between a user and the application.
 The application is built using Python.
 
+## Architecture
+
+The application is built using the following components:
+
+- OpenAI API (Text to Speech, Speech to Text, Language Models)
+- Python Sound Processing Libraries
+- CLI Interface
+
+This is a high-level diagram of the application's flow:
+
+```mermaid
+sequenceDiagram
+    participant User as User
+    participant SpeechChatApp as Speech Chat App
+    participant OpenAIAPI as OpenAI API
+
+    User->>SpeechChatApp: Record audio
+    SpeechChatApp->>OpenAIAPI: Transcribe Audio
+    OpenAIAPI-->>SpeechChatApp: Transcribed Text
+    SpeechChatApp->>OpenAIAPI: Request LLM answer
+    OpenAIAPI-->>SpeechChatApp: LLM Answer
+    SpeechChatApp->>OpenAIAPI: Generate Audio
+    OpenAIAPI-->>SpeechChatApp: Generated Audio
+    SpeechChatApp->>User: Play audio
+```
+
 ## Requirements
 
 The following libraries are required to run the application:

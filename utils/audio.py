@@ -37,7 +37,7 @@ def record_audio(
 
     # Choose the samplerate and the number of channels
     samplerate = 44100  # Hertz
-    channels = 2
+    channels = 1
 
     # Record audio
     print("Recording...")

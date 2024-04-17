@@ -42,13 +42,7 @@ def text_to_speech(
     # TODO: Play with additional parameters like speed, extra params and query params
 
     response = CLIENT.audio.speech.create(
-        model=model_deployment,
-        voice=voice,
-        input=text,
-        response_format=audio_format,
-        extra_query={
-            "query": "Speak slowly and use pretend to use time to think. Use some pauses and ahms."
-        },
+        model=model_deployment, voice=voice, input=text, response_format=audio_format
     )
 
     output_file_path = folder + "tmp.wav"
