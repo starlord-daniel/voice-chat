@@ -25,7 +25,7 @@ def main():
     os.remove(AUDIO_FILE_PATH)
 
     # # Use text to generate an answer
-    answer = generate_answer(transcription, language="spanish")
+    answer = generate_answer(transcription, language="english")
 
     if not answer:
         print("No answer was generated.")
@@ -38,7 +38,6 @@ def main():
         answer,
         audio_format="wav",
         voice="echo",
-        model_deployment="tts002",
         folder=AUDIO_FILE_PATH.rsplit("/", 1)[0],
     )
     play_audio_from_stream(generated_speech_path)

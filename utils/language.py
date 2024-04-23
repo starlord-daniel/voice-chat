@@ -22,7 +22,8 @@ def generate_answer(
         The name of the deployed model to use for the answer generation. The default is "gpt-35-turbo".
 
     language : str, optional
-        The language to translate the answer to. The default is "english".
+        The language to translate the answer to written in natural english language (no abbreviations).
+        The default is "english".
 
     Returns
     -------

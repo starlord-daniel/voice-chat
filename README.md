@@ -31,28 +31,29 @@ sequenceDiagram
     SpeechChatApp->>User: Play audio
 ```
 
+## Setup / Running the application
+
+In order to perform the Text to Speech, Speech to Text and Language Model operations, you need to have an Azure OpenAI resource.
+
+Before creating the resource, make sure the *tts* and *whisper* models are available in the selected region. The availability of the models for each region can be checked in the [Azure Open AI docs](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#standard-deployment-model-availability)
+
+After creating the resource, you need to create a deployment for the *tts* and *whisper* models. The deployment can be created in the Azure OpenAI Studio (which is accessible from the resource in the Azure Portal).
+
+After creating these, make sure to fill out the *.env* file with the information from the Azure OpenAI resource. Hints are provided in the *.env.default* file.
+
+After filling out the *.env* file, you can run the application using the following command:
+
+```bash
+python main.py
+```
+
 ## Requirements
 
 The following libraries are required to run the application:
 
 - `openai` - OpenAI's Python library
-
-## Other interesting libraries
-
-- `openai` - OpenAI's Python library
-- `pydub` - Audio manipulation library
-- `pyaudio` - Audio I/O library
-- `speech_recognition` - Speech recognition library
 - `sounddevice` - Sound processing library
-- `wave` - WAV file processing library
-- `numpy` - Numerical computing library
-- `pandas` - Data manipulation library
-- `matplotlib` - Data visualization library
 - `scipy` - Scientific computing library
-- `librosa` - Audio and music processing library
-- `tensorflow` - Machine learning library
-- `keras` - Deep learning library
-- `nltk` - Natural language processing library
 
 ## Related Links
 
